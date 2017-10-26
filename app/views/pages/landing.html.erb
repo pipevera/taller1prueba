@@ -1,0 +1,22 @@
+<h1>Felipe Vera</h1>
+
+
+<div class="notice"> <%= notice %></div>
+<div class="alert"> <%= alert %></div>
+
+<%= form_tag(pages_save_user_path) do %> 
+	<%= text_field_tag "name", nil, placeholder: "Nombre" %> <br>
+	<%= email_field_tag "email", nil, placeholder: "Email" %> <br>
+	<%= number_field_tag "age", nil, placeholder: "Edad" %> <br>
+	<%= submit_tag "Enviar Formulario" %>
+<% end -%> 
+
+<hr>
+
+<h2>usuarios</h2>
+
+<ul>
+	<% @users.each do |user| %>
+		<li><%= "#{user.name} - #{user.email}" %></li>
+	<% end %>
+</ul>
